@@ -174,8 +174,9 @@ footer p {
     }
 
     /* Úprava farby tlačidla hamburger menu */
-    .navbar-toggler-icon {
+    .navbar-toggler {
         background-color: white;
+        color: white;
     }
 
     /* Úprava farby pozadia tlačidla ponuky hamburger */
@@ -188,12 +189,15 @@ footer p {
     .jumbotron p {
         text-align: center;
         margin: 0;
-        margin-left: 50px;
         padding: 10px;
     }
     .jumbotron a {
-        width: 20%;
-        padding-left: 10%;
+        width: 50%; /* Rozšírenie na celú šírku */
+        text-align: center; /* Zarovnanie textu na stred */
+        padding: 10px; /* Prispôsobte podľa potreby */
+        box-sizing: border-box; /* Zaistenie, že padding sa zahrnie do celkovej šírky */
+        display: inline-block; /* Zabezpečuje, že šírka sa prispôsobí obsahu */
+        margin-left: 30%;
     }
 }
 

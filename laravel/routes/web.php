@@ -7,10 +7,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TortaController;
 use App\Http\Controllers\TortaAjaxController;
 use App\Http\Controllers\ShoppingCartController;
-
-
-
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Domovská stránka
-Route::get('/', function () {
+Route::get('/', function () { 
     return view('home');
 });
 
@@ -50,8 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/create', [TortaController::class, 'create'])->name('profile.create');
     Route::get('/torty/{torta}/edit', [TortaController::class, 'edit'])->name('torty.edit');
     Route::patch('/torty/{torta}', [TortaController::class, 'update'])->name('torty.update');
-    Route::delete('/torta-ajax/{id}', [TortaAjaxController::class, 'deleteTorta'])
-    ->name('torta-ajax.delete');
+    Route::delete('/torta-ajax/{id}', [TortaAjaxController::class, 'deleteTorta'])->name('torta-ajax.delete');
 
 });
 
@@ -69,7 +64,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/shopping-cart/add/{tortaId}', [ShoppingCartController::class, 'addToCart'])->name('shopping-cart.add');
     Route::delete('/shopping-cart/remove/{tortaId}', [ShoppingCartController::class, 'removeFromCart'])->name('shopping-cart.remove');
     Route::put('/shopping-cart/update/{tortaId}', [ShoppingCartController::class, 'updateQuantity'])->name('shopping-cart.update');
-
 });
 
 

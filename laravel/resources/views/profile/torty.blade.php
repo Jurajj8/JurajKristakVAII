@@ -4,11 +4,11 @@
 <link rel="stylesheet" href="{{ asset('css/styl.css') }}">
 
 @section('content')
-<!-- Vložení Axios z CDN -->
+<!-- AXIOS skript -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <div class="container">
         <div class="row">
-            <!-- Boční menu -->
+            <!-- Bočné menu -->
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="{{ route('profile.show') }}" class="list-group-item list-group-item-action">Profil</a>
@@ -37,8 +37,8 @@
                                             <p class="card-text">Cena: {{ $torta->cena }} €</p>
                                             <p class="card-text"><i>{{ $torta->popis }}</i></p>
                                             <div class="col-md-12 text-center">
-                                                <a href="{{ route('torty.edit', $torta->id) }}" class="btn btn-primary mb-2">Upravit</a>
-                                                <button class="btn btn-danger mb-2" onclick="deleteTorta('{{ $torta->id }}')">Zmazat</button>
+                                                <a href="{{ route('torty.edit', $torta->id) }}" class="btn btn-primary mb-2">Upraviť</a>
+                                                <button class="btn btn-danger mb-2" onclick="deleteTorta('{{ $torta->id }}')">Zmazať</button>
                                             </div>
                                         </div>
                                     </div>
@@ -56,7 +56,6 @@
         if (confirm("Naozaj chcete zmazať tortu?")) {
             axios.delete(`/torta-ajax/${tortaId}`)
                 .then(response => {
-                    // Aktualizujte UI nebo proveďte další kroky podle potřeby
                     console.log(response.data.message);
                     location.reload();
                 })

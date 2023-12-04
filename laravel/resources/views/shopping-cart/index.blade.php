@@ -21,7 +21,7 @@
                             <form action="{{ route('shopping-cart.remove', $item->torta->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Odebrat</button>
+                                <button type="submit" class="btn btn-danger btn-sm">Odobrať</button>
                             </form>
                             <form action="{{ route('shopping-cart.update', $item->torta->id) }}" method="POST" class="ml-2">
                                 @csrf
@@ -29,7 +29,7 @@
                                 <div class="input-group">
                                     <input type="number" name="quantity" value="{{ $item->quantity }}" min="1" class="form-control">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary btn-sm">Aktualizovat</button>
+                                        <button type="submit" class="btn btn-primary btn-sm">Aktualizovať</button>
                                     </div>
                                 </div>
                             </form>

@@ -1,13 +1,10 @@
-<!-- resources/views/profile.blade.php -->
-
 @extends('show')
 
 @section('profil_content')
-    <!-- Zobrazení existujících dortů pro přehled -->
-    <h1>Profil uživatele</h1>
+    <h1>Profil používateľa</h1>
 
         <div>
-            <strong>Jméno:</strong> {{ $user->name }}
+            <strong>Meno:</strong> {{ $user->name }}
         </div>
         <div>
             <strong>Email:</strong> {{ $user->email }}

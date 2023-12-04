@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <!-- Boční menu -->
+            <!-- Bočné menu -->
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="{{ route('profile.show') }}" class="list-group-item list-group-item-action">Profil</a>
@@ -14,30 +14,26 @@
 
             <!-- Obsah stránky -->
             <div class="col-md-9">
-                <h1>Přidat dort</h1>
+                <h1>Pridať tortu</h1>
                 <form action="{{ route('torty.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
-                        <label for="nazov" class="form-label">Název dortu</label>
+                        <label for="nazov" class="form-label">Názov</label>
                         <input type="text" class="form-control" id="nazov" name="nazov" required>
                     </div>
 
                     <div class="mb-3">
                     <label for="typ_id" class="form-label">Typ</label>
-<select class="form-control" id="typ_id" name="typ_id">
-    @foreach(\App\Models\TypTorty::all() as $typTorty)
-        <option value="{{ $typTorty->id }}">{{ $typTorty->typ }}</option>
-    @endforeach
-</select>
-
-
-
-
+                        <select class="form-control" id="typ_id" name="typ_id">
+                            @foreach(\App\Models\TypTorty::all() as $typTorty)
+                                <option value="{{ $typTorty->id }}">{{ $typTorty->typ }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="mb-3">
-                        <label for="zakladne_zlozenie" class="form-label">Základní složení</label>
+                        <label for="zakladne_zlozenie" class="form-label">Základné zloženie</label>
                         <input type="text" class="form-control" id="zakladne_zlozenie" name="zakladne_zlozenie" required>
                     </div>
 
@@ -52,11 +48,11 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="obrazok" class="form-label">Obrázek dortu</label>
+                        <label for="obrazok" class="form-label">Obrázok</label>
                         <input type="file" class="form-control" id="obrazok" name="obrazok" accept="image/*" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Přidat dort</button>
+                    <button type="submit" class="btn btn-primary">Pridať tortu</button>
                 </form>
                 @if ($errors->any())
         <div class="alert alert-danger mt-3">

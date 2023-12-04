@@ -1,11 +1,9 @@
-<!-- resources/views/profile/show.blade.php -->
-
 @extends('layouts.appNb')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <!-- Boční menu -->
+            <!-- Bočné menu -->
             <div class="col-md-3">
                 <div class="list-group">
                 <a href="{{ route('profile.show') }}" class="list-group-item list-group-item-action">Profil</a>
@@ -16,8 +14,8 @@
 
             <!-- Obsah stránky -->
             <div class="col-md-9">
-               <h1>Můj profil</h1>
-               <p>Jméno: {{ Auth::user()->name }}</p>
+               <h1>Môj profil</h1>
+               <p>Meno: {{ Auth::user()->name }}</p>
                <p>Email: {{ Auth::user()->email }}</p>
 
                <h2>Změna hesla</h2>
@@ -26,7 +24,7 @@
                    @method('PATCH')
 
                    <div class="mb-3">
-                       <label for="current_password" class="form-label">Aktuální heslo</label>
+                       <label for="current_password" class="form-label">Aktuálne heslo</label>
                        <input type="password" class="form-control" id="current_password" name="current_password" required>
                    </div>
 
@@ -36,11 +34,11 @@
                    </div>
 
                    <div class="mb-3">
-                       <label for="new_password_confirmation" class="form-label">Potvrdit nové heslo</label>
+                       <label for="new_password_confirmation" class="form-label">Potvrdiť nové heslo</label>
                        <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$" title="Heslo musí byť dlhé aspoň 8 znakov, mať jedno veľke písmeno a jednu číslicu.">
                    </div>
 
-                   <button type="submit" class="btn btn-primary">Uložit heslo</button>
+                   <button type="submit" class="btn btn-primary">Uložiť heslo</button>
                </form>
             </div>
         </div>

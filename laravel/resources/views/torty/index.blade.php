@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="{{ asset('css/styl.css') }}">
 
 @section('content')
-   <!-- ... Tvoje kód profilu ... -->
    <div class="col-md-9">
        <div class="torty-list">
            <div class="container mt-4">

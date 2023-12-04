@@ -34,10 +34,11 @@
   <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="topNav">
       <div class="container" style="max-width: 85%">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler navbar-dark"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarCollapse"
+          style="color:#fff;"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,22 +48,22 @@
         >
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="{{ route('home') }}" class="nav-link active" style="color: white"
+              <a href="{{ route('home') }}" class="nav-link @if(Request::is('home')) active @endif" style="color: white"
                 >Domov</a
               >
             </li>
             <li class="nav-item">
-              <a href="{{ route('torty.index') }}" class="nav-link" style="color: white"
+              <a href="{{ route('torty.index') }}" class="nav-link @if(Request::is('torty')) active @endif" style="color: white"
                 >Ponuka</a
               >
             </li>
-            <li class="nav-item dropdown">
+           <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
                 style="color: white"
               >
-                Udalosti
+                Události
               </a>
               <div class="dropdown-menu">
                 <a href="svadba.html" class="dropdown-item">Svadba</a>
@@ -82,12 +83,12 @@
         @if(Auth::check())
         
           <li class="nav-item">
-            <a href="{{ route('shopping-cart.index') }}" class="nav-link" style="color: white">
+            <a href="{{ route('shopping-cart.index') }}" class="nav-link @if(Request::is('shopping-cart')) active @endif" style="color: white">
               <i class="fas fa-shopping-basket"></i> Košík
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('profile.show') }}" class="nav-link" style="color: white">
+            <a href="{{ route('profile.show') }}" class="nav-link @if(Request::is('profile/show') || Request::is('profile/create') || Request::is('profile/torty')) active @endif" style="color: white">
               <i class="fas fa-user"></i> Profil
             </a>
           </li>
@@ -95,7 +96,7 @@
             <form method="POST" action="{{ route('logout') }}">
             @csrf
               <button type="submit" class="nav-link" style="color: white; background: none; border: none;">
-                <i class="fas fa-sign-out-alt"></i> Odhlásit
+                <i class="fas fa-sign-out-alt"></i> Odhlásiť
               </button>
             </form>
           </li>
@@ -103,12 +104,12 @@
           <!-- Pokud uživatel není přihlášený -->
           <li class="nav-item">
             <a href="{{ route('login') }}" class="nav-link" style="color: white">
-              <i class="fas fa-sign-in-alt"></i> Přihlásit
+              <i class="fas fa-sign-in-alt"></i> Přihlásiť
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ route('register') }}" class="nav-link" style="color: white">
-              <i class="fas fa-user-plus"></i> Registrovat
+              <i class="fas fa-user-plus"></i> Registrovať
             </a>
           </li>
         @endif
@@ -119,7 +120,7 @@
     <div class="jumbotron text-center">
     <h1>Vítajte v cukrárskej výrobe Marcely Lašovej</h1>
     <p>Ponúkame najlepšie a najlahodnejšie torty pre vaše oslavy a události.</p>
-    <a class="btn btn-primary btn-lg " href="#objednat" role="button">Objednať</a>
+    <a class="btn btn-primary btn-lg " role="button">Objednať</a>
 </div>
 
 
